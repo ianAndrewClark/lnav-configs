@@ -1,0 +1,33 @@
+{
+	"javalogging" : {
+		"title"			: "Java log format - prefixed by docker container id",
+		"description"	: "Log format used by log4j and output by most java programs",
+		"url"			: "",
+		"regex" : {
+			"docker_java" : {
+				"pattern" : "^(?<container>[a-zA-Z0-9\\.\\-\\_@]+)    \\| (?<timestamp>\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?) (?<alert_level>\\w+)\\s+(?<class>[\\w.]+)\\s+-\\s+(?<body>\\S.*).*$"
+			}
+		},
+		"level-field" : "alert_level",
+		"level" : {
+			"info"	: "STATUS",
+			"error" : "ERROR",
+			"warning" : "WARN",
+			"debug" : "DEBUG",
+			"info" : "INFO"
+		},
+		"value" : {
+			"function" 		: { "kind" : "string", "identifier" : true },
+			"alert_level"	: { "kind" : "string", "identifier" : true },
+			"source"		: { "kind" : "string", "identifier" : true },
+			"debug_level"	: { "kind" : "string", "identifier" : true },
+			"class"			: { "kind" : "string", "identifier" : true },
+			"body"			: { "kind" : "string" }
+		},
+		"sample" : [
+			{
+				"line": "pox_app.1.ssb99g1rnoeu@linuxkit-025000000001    | 12:29:41.555 INFO  org.springframework.web.servlet.FrameworkServlet - FrameworkServlet 'SpringWebMVC': initialization completed in 36498 ms"
+			}
+		]
+	}
+}
