@@ -5,7 +5,7 @@
 		"url"			: "",
 		"regex" : {
 			"docker_java" : {
-				"pattern" : "^(?<container>[a-zA-Z0-9\\.\\-\\_@]+)    \\| (?<timestamp>\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?) (?<alert_level>\\w+)\\s+(?<class>[\\w.]+)\\s+-\\s+(?<body>\\S.*).*$"
+				"pattern" : "^(?<container>[a-zA-Z0-9\\.\\-\\_@]+)\\s+\\|\\s(?<timestamp>\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?)\\s+(?<alert_level>\\w+)\\s+(?<class>[\\w.]+)\\s+-\\s+(?<body>\\S.*).*$"
 			},
 			"docker_java_2" : {
 				"pattern" : "^(?<container>[a-zA-Z0-9\\.\\-\\_@]+)\\s+\\|\\s(?<timestamp>\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?)\\s+\\[(?<thread>\\S+)\\]\\s+(?<alert_level>\\w+)\\s+(?<class>[\\w.]+)\\s+-\\s+(?<body>\\S.*).*$"
